@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Dna, BarChart2, Medal, Scissors, FlaskConical, Repeat } from 'lucide-react';
 
-const API_URL = 'http://localhost:8001';
+const API_URL = import.meta.env.VITE_API_URL || 'https://ghost-backend-6mqd.onrender.com';
 const REPO = 'https://github.com/RevOnCodeX/the-ghost-in-the-machine/tree/89772ae746bac3c41ce76ecdf82ff42d6c1a7299';
 
 const GA_LOG = [
