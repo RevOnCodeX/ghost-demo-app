@@ -7,6 +7,9 @@ from collections import Counter
 import textstat
 import nltk
 
+nltk.download('punkt_tab', quiet=True)
+nltk.download('averaged_perceptron_tagger_eng', quiet=True)
+
 def get_nltk_metrics(text):
     words = nltk.word_tokenize(text)
     # 1. TTR & Hapax
@@ -35,7 +38,7 @@ app = FastAPI(title="Ghost in the Machine API")
 # Enable CORS for local React dev server
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
